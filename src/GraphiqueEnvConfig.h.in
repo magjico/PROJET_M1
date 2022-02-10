@@ -1,0 +1,5 @@
+// the configured options and settings for GraphiqueEnv
+#define GraphiqueEnv_VERSION_MAJOR @GraphiqueEnv_VERSION_MAJOR@
+#define GraphiqueEnv_VERSION_MINOR @GraphiqueEnv_VERSION_MINOR@
+
+#cmakedefine USE_GLFW
