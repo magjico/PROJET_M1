@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/GraphiqueEnv.dir/src/main.cpp.o -o GraphiqueEnv  -lLibs/glfw-3.3.4 

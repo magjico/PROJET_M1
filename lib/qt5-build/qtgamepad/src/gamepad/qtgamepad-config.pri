@@ -1,0 +1,10 @@
+QT.gamepad.enabled_features = 
+QT.gamepad.disabled_features = 
+QT.gamepad.QT_CONFIG = 
+QT.gamepad.exports = 
+QT.gamepad_private.enabled_features = sdl2
+QT.gamepad_private.disabled_features = 
+QT.gamepad_private.libraries = sdl2
+QMAKE_LIBS_SDL2 = /usr/lib/x86_64-linux-gnu/libSDL2.so
+QMAKE_DEFINES_SDL2 = _REENTRANT
+QMAKE_INCDIR_SDL2 = /usr/include/SDL2

@@ -1,0 +1,7 @@
+-developer-build
+-opensource
+-nomake
+examples
+-nomake
+tests
+-confirm-license

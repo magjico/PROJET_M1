@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ../qt5/configure -redo "$@"

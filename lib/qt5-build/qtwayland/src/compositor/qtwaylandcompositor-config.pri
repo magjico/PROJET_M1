@@ -1,0 +1,9 @@
+QT.waylandcompositor.enabled_features = wayland-compositor-quick
+QT.waylandcompositor.disabled_features = 
+QT.waylandcompositor.QT_CONFIG = 
+QT.waylandcompositor.exports = 
+QT.waylandcompositor_private.enabled_features = wayland-server wayland-datadevice wayland-drm-egl-server-buffer wayland-egl wayland-shm-emulation-server-buffer
+QT.waylandcompositor_private.disabled_features = wayland-brcm wayland-compositor-texture-sharing-experimental wayland-dmabuf-server-buffer wayland-layer-integration-vsp2 wayland-libhybris-egl-server-buffer wayland-vulkan-server-buffer xcomposite-egl xcomposite-glx
+QT.waylandcompositor_private.libraries = wayland_server wayland_egl
+QMAKE_LIBS_WAYLAND_SERVER = /usr/lib/x86_64-linux-gnu/libwayland-server.so
+QMAKE_LIBS_WAYLAND_EGL = /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so

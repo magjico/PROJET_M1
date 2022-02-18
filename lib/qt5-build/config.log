@@ -1,0 +1,1631 @@
+Command line: -developer-build -opensource -nomake examples -nomake tests
+executing config test use_gold_linker
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests && g++ -pipe -fuse-ld=gold -o conftest-out conftest.cpp
+test config.qtbase.tests.use_gold_linker succeeded
+executing config test machineTuple
++ g++ -dumpmachine
+> x86_64-linux-gnu
+test config.qtbase.tests.machineTuple succeeded
+executing config test verifyspec
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/verifyspec && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/verifyspec
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/verifyspec && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/verifyspec -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o verifyspec.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/verifyspec/verifyspec.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o verifyspec verifyspec.o      
+test config.qtbase.tests.verifyspec succeeded
+executing config test architecture
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/arch && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/arch
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/arch && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/arch -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o arch.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/arch/arch.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o arch arch.o      
+Detected architecture: x86_64 (mmx sse sse2)
+test config.qtbase.tests.architecture gave result x86_64
+executing config test sse2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse2 /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -msse2 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE2 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse2 succeeded
+executing config test aesni
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=aesni /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -maes -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AESNI -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.aesni succeeded
+executing config test alloca_h
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/alloca_h && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/alloca_h
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/alloca_h && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o alloca_h main.o      
+test config.qtbase.tests.alloca_h succeeded
+executing config test sse3
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse3 /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msse3 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE3 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse3 succeeded
+executing config test ssse3
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=ssse3 /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mssse3 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSSE3 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.ssse3 succeeded
+executing config test sse4_1
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse4_1 /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msse4.1 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE4_1 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse4_1 succeeded
+executing config test sse4_2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=sse4_2 /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msse4.2 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SSE4_2 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.sse4_2 succeeded
+executing config test avx
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx succeeded
+executing config test avx2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx2 /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx2 -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX2 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx2 succeeded
+executing config test avx512f
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512f /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512f -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512F -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512f succeeded
+executing config test avx512bw
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512bw /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512bw -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512BW -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512bw succeeded
+executing config test avx512cd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512cd -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512CD -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512cd succeeded
+executing config test avx512dq
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512dq /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512dq -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512DQ -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512dq succeeded
+executing config test avx512er
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512er /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512er -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512ER -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512er succeeded
+executing config test avx512ifma
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512ifma /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512ifma -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512IFMA -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512ifma succeeded
+executing config test avx512pf
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512pf /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512pf -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512PF -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512pf succeeded
+executing config test avx512vbmi
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512vbmi /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512vbmi -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512VBMI -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512vbmi succeeded
+executing config test avx512vl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=avx512vl /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mavx512vl -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_AVX512VL -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.avx512vl succeeded
+executing config test c++14
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c++14 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c++14
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c++14 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++1y -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o c++14 main.o      
+test config.qtbase.tests.c++14 succeeded
+executing config test c++1z
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c++1z && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c++1z
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c++1z && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -std=gnu++1z -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o c++1z main.o      
+test config.qtbase.tests.c++1z succeeded
+executing config test c99
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c99 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c99
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c99 && MAKEFLAGS= /usr/bin/make
+> gcc -c -pipe -O2 -std=gnu99 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.c
+> g++ -Wl,-O1 -fuse-ld=gold -o c99 main.o      
+test config.qtbase.tests.c99 succeeded
+executing config test c11
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c11 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c11
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/c11 && MAKEFLAGS= /usr/bin/make
+> gcc -c -pipe -O2 -std=gnu11 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.c
+> g++ -Wl,-O1 -fuse-ld=gold -o c11 main.o      
+test config.qtbase.tests.c11 succeeded
+executing config test pkg-config
+Found pkg-config from path: /usr/bin/pkg-config
+test config.qtbase.tests.pkg-config succeeded
+Global lib dirs: [] [/usr/lib/gcc/x86_64-linux-gnu/9 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib]
+Global inc dirs: [] [/usr/include/c++/9 /usr/include/x86_64-linux-gnu/c++/9 /usr/include/c++/9/backward /usr/lib/gcc/x86_64-linux-gnu/9/include /usr/local/include /usr/include/x86_64-linux-gnu /usr/include]
+looking for library dbus
+Trying source 0 (type pkgConfig) of library dbus ...
++ /usr/bin/pkg-config --exists --silence-errors dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --modversion dbus-1 '>=' 1.2
+> 1.12.16
++ /usr/bin/pkg-config --libs-only-L dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --libs-only-l dbus-1 '>=' 1.2
+> -ldbus-1
++ /usr/bin/pkg-config --cflags dbus-1 '>=' 1.2
+> -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dbus && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += dbus' 'QMAKE_LIBS_DBUS = /usr/lib/x86_64-linux-gnu/libdbus-1.so' 'QMAKE_INCDIR_DBUS = /usr/include/dbus-1.0 /usr/lib/x86_64-linux-gnu/dbus-1.0/include' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dbus
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dbus && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I. -isystem /usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o dbus main.o   /usr/lib/x86_64-linux-gnu/libdbus-1.so   
+ => source accepted.
+test config.qtbase.libraries.dbus succeeded
+executing config test gdb_index
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests && g++ -pipe -fuse-ld=gold -Wl,--gdb-index -o conftest-out conftest.cpp
+test config.qtbase.tests.gdb_index succeeded
+executing config test enable_new_dtags
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests && g++ -pipe -fuse-ld=gold -Wl,--enable-new-dtags -o conftest-out conftest.cpp
+test config.qtbase.tests.enable_new_dtags succeeded
+executing config test f16c
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=f16c /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mf16c -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_F16C -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.f16c succeeded
+looking for library host_dbus
+Trying source 0 (type pkgConfig) of library host_dbus ...
++ /usr/bin/pkg-config --exists --silence-errors dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --modversion dbus-1 '>=' 1.2
+> 1.12.16
++ /usr/bin/pkg-config --libs-only-L dbus-1 '>=' 1.2
++ /usr/bin/pkg-config --libs-only-l dbus-1 '>=' 1.2
+> -ldbus-1
++ /usr/bin/pkg-config --cflags dbus-1 '>=' 1.2
+> -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
+ => source accepted.
+test config.qtbase.libraries.host_dbus succeeded
+looking for library libudev
+Trying source 0 (type pkgConfig) of library libudev ...
++ /usr/bin/pkg-config --exists --silence-errors libudev
++ /usr/bin/pkg-config --modversion libudev
+> 245
++ /usr/bin/pkg-config --libs-only-L libudev
++ /usr/bin/pkg-config --libs-only-l libudev
+> -ludev
++ /usr/bin/pkg-config --cflags libudev
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libudev && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libudev' 'QMAKE_LIBS_LIBUDEV = /usr/lib/x86_64-linux-gnu/libudev.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libudev
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libudev && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o libudev main.o   /usr/lib/x86_64-linux-gnu/libudev.so   
+ => source accepted.
+test config.qtbase.libraries.libudev succeeded
+executing config test posix_fallocate
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/posix_fallocate && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/posix_fallocate
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/posix_fallocate && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o posix_fallocate main.o      
+test config.qtbase.tests.posix_fallocate succeeded
+executing config test precompile_header
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/precompile_header && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/precompile_header
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/precompile_header && MAKEFLAGS= /usr/bin/make
+> g++ -pipe -O2 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -x c++-header -c header.h -o .pch/precompile_header.gch/c++
+> g++ -c -include .pch/precompile_header -pipe -O2 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o precompile_header main.o      
+test config.qtbase.tests.precompile_header succeeded
+executing config test rdrnd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=rdrnd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -mrdrnd -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_RDRND -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.rdrnd succeeded
+executing config test reduce_exports
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/reduce_exports && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/reduce_exports
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/reduce_exports && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -fvisibility=hidden -fvisibility-inlines-hidden -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> rm -f libreduce_exports.so.1.0.0 libreduce_exports.so libreduce_exports.so.1 libreduce_exports.so.1.0
+> g++ -Wl,-O1 -fuse-ld=gold -shared -Wl,-soname,libreduce_exports.so.1 -o libreduce_exports.so.1.0.0 main.o      
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so.1
+> ln -s libreduce_exports.so.1.0.0 libreduce_exports.so.1.0
+test config.qtbase.tests.reduce_exports succeeded
+executing config test reduce_relocations
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/reduce_relocations && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/reduce_relocations
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/reduce_relocations && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> rm -f libreduce_relocations.so.1.0.0 libreduce_relocations.so libreduce_relocations.so.1 libreduce_relocations.so.1.0
+> g++ -Wl,-O1 -fuse-ld=gold -shared -Wl,-Bsymbolic-functions -Wl,-soname,libreduce_relocations.so.1 -o libreduce_relocations.so.1.0.0 main.o      
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so.1
+> ln -s libreduce_relocations.so.1.0.0 libreduce_relocations.so.1.0
+test config.qtbase.tests.reduce_relocations succeeded
+executing config test shani
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" CONFIG+=add_cflags DEFINES+=NO_ATTRIBUTE SIMD=shani /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -msha -O2 -w -fPIC -DNO_ATTRIBUTE -DQT_COMPILER_SUPPORTS_SHANI -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.shani succeeded
+executing config test stl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/stl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/stl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/stl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/stl -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o stltest.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/stl/stltest.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o stl stltest.o      
+test config.qtbase.tests.stl succeeded
+looking for library zlib
+Trying source 0 (type inline) of library zlib ...
+  => source failed condition 'config.msvc'.
+Trying source 1 (type inline) of library zlib ...
+  => source failed condition 'config.msvc'.
+Trying source 2 (type inline) of library zlib ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/zlib && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += zlib' 'QMAKE_LIBS_ZLIB = /usr/lib/x86_64-linux-gnu/libz.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/zlib
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/zlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -O2 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o zlib main.o   /usr/lib/x86_64-linux-gnu/libz.so   
+ => source accepted.
+test config.qtbase.libraries.zlib succeeded
+executing config test x86SimdAlways
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'SIMD=aesni avx avx2 avx512bw avx512cd avx512dq avx512er avx512f avx512ifma avx512pf avx512vbmi avx512vl f16c rdrnd shani sse2 sse3 sse4_1 sse4_2 ssse3' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/x86_simd && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -O2 -w -fPIC -DQT_COMPILER_SUPPORTS_AESNI -DQT_COMPILER_SUPPORTS_AVX -DQT_COMPILER_SUPPORTS_AVX2 -DQT_COMPILER_SUPPORTS_AVX512BW -DQT_COMPILER_SUPPORTS_AVX512CD -DQT_COMPILER_SUPPORTS_AVX512DQ -DQT_COMPILER_SUPPORTS_AVX512ER -DQT_COMPILER_SUPPORTS_AVX512F -DQT_COMPILER_SUPPORTS_AVX512IFMA -DQT_COMPILER_SUPPORTS_AVX512PF -DQT_COMPILER_SUPPORTS_AVX512VBMI -DQT_COMPILER_SUPPORTS_AVX512VL -DQT_COMPILER_SUPPORTS_F16C -DQT_COMPILER_SUPPORTS_RDRND -DQT_COMPILER_SUPPORTS_SHANI -DQT_COMPILER_SUPPORTS_SSE2 -DQT_COMPILER_SUPPORTS_SSE3 -DQT_COMPILER_SUPPORTS_SSE4_1 -DQT_COMPILER_SUPPORTS_SSE4_2 -DQT_COMPILER_SUPPORTS_SSSE3 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/config.tests/x86_simd/main.cpp
+> g++ -Wl,-O1 -fuse-ld=gold -o x86_simd main.o      
+test config.qtbase.tests.x86SimdAlways succeeded
+looking for library librt
+Trying source 0 (type inline) of library librt ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/librt && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += librt' 'QMAKE_LIBS_LIBRT = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/librt
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/librt && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o librt main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.librt succeeded
+executing config test clock-monotonic
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/clock-monotonic && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += librt' 'QMAKE_LIBS_LIBRT = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/clock-monotonic
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/clock-monotonic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o clock-monotonic main.o      
+test config.qtbase_corelib.tests.clock-monotonic succeeded
+executing config test cxx11_future
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cxx11_future && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cxx11_future
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cxx11_future && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o cxx11_future main.o   -lpthread   
+test config.qtbase_corelib.tests.cxx11_future succeeded
+looking for library libdl
+Trying source 0 (type inline) of library libdl ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libdl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libdl' 'QMAKE_LIBS_LIBDL = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libdl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libdl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o libdl main.o      
+> main.cpp:7 : erreur : référence à « dlopen » non définie
+> main.cpp:7 : erreur : référence à « dlclose » non définie
+> main.cpp:8 : erreur : référence à « dlsym » non définie
+> main.cpp:9 : erreur : référence à « dlerror » non définie
+> collect2: error: ld returned 1 exit status
+> make: *** [Makefile:67 : libdl] Erreur 1
+ => source failed verification.
+Trying source 1 (type inline) of library libdl ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libdl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libdl' 'QMAKE_LIBS_LIBDL = /usr/lib/x86_64-linux-gnu/libdl.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libdl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libdl && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o libdl main.o   /usr/lib/x86_64-linux-gnu/libdl.so   
+ => source accepted.
+test config.qtbase_corelib.libraries.libdl succeeded
+executing config test eventfd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/eventfd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/eventfd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/eventfd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o eventfd main.o      
+test config.qtbase_corelib.tests.eventfd succeeded
+executing config test futimens
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/futimens && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/futimens
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/futimens && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -Wall -W -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o futimens main.o      
+test config.qtbase_corelib.tests.futimens succeeded
+executing config test getauxval
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getauxval && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getauxval
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getauxval && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o getauxval main.o      
+test config.qtbase_corelib.tests.getauxval succeeded
+executing config test getentropy
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getentropy && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getentropy
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getentropy && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o getentropy main.o      
+test config.qtbase_corelib.tests.getentropy succeeded
+looking for library glib
+Trying source 0 (type pkgConfig) of library glib ...
++ /usr/bin/pkg-config --exists --silence-errors glib-2.0 gthread-2.0
++ /usr/bin/pkg-config --modversion glib-2.0 gthread-2.0
+> 2.64.6
+> 2.64.6
++ /usr/bin/pkg-config --libs-only-L glib-2.0 gthread-2.0
++ /usr/bin/pkg-config --libs-only-l glib-2.0 gthread-2.0
+> -lgthread-2.0 -lglib-2.0
++ /usr/bin/pkg-config --cflags glib-2.0 gthread-2.0
+> -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+Note: Dropped compiler flags '-pthread'.
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/glib && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += glib' 'QMAKE_LIBS_GLIB = /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_GLIB = /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/glib
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/glib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o glib main.o   /usr/lib/x86_64-linux-gnu/libgthread-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+ => source accepted.
+test config.qtbase_corelib.libraries.glib succeeded
+executing config test glibc
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/glibc && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/glibc
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/glibc && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o glibc main.o      
+test config.qtbase_corelib.tests.glibc succeeded
+looking for library posix_iconv
+Trying source 0 (type inline) of library posix_iconv ...
+  => source failed condition 'config.openbsd || config.haiku'.
+Trying source 1 (type inline) of library posix_iconv ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/posix_iconv && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += posix_iconv' 'QMAKE_LIBS_POSIX_ICONV = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/posix_iconv
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/posix_iconv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o posix_iconv main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.posix_iconv succeeded
+looking for library icu
+Trying source 0 (type inline) of library icu ...
+  => source failed condition 'config.win32 && !features.shared'.
+Trying source 1 (type inline) of library icu ...
+  => source failed condition 'config.win32 && features.shared'.
+Trying source 2 (type inline) of library icu ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/icu && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += icu' 'QMAKE_LIBS_ICU = /usr/lib/x86_64-linux-gnu/libicui18n.so /usr/lib/x86_64-linux-gnu/libicuuc.so /usr/lib/x86_64-linux-gnu/libicudata.so' 'QMAKE_DEPENDS_ICU_CC = LIBDL' 'QMAKE_DEPENDS_ICU_LD = LIBDL' 'QMAKE_LIBS_LIBDL = /usr/lib/x86_64-linux-gnu/libdl.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/icu
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/icu && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o icu main.o   /usr/lib/x86_64-linux-gnu/libicui18n.so /usr/lib/x86_64-linux-gnu/libicuuc.so /usr/lib/x86_64-linux-gnu/libicudata.so /usr/lib/x86_64-linux-gnu/libdl.so   
+ => source accepted.
+test config.qtbase_corelib.libraries.icu succeeded
+executing config test inotify
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/inotify && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/inotify
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/inotify && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o inotify main.o      
+test config.qtbase_corelib.tests.inotify succeeded
+executing config test ipc_sysv
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ipc_sysv && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ipc_sysv
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ipc_sysv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o ipc_sysv main.o      
+test config.qtbase_corelib.tests.ipc_sysv succeeded
+executing config test linkat
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linkat && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linkat
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linkat && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o linkat main.o      
+test config.qtbase_corelib.tests.linkat succeeded
+executing config test ppoll
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ppoll && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ppoll
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ppoll && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o ppoll main.o      
+test config.qtbase_corelib.tests.ppoll succeeded
+executing config test renameat2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/renameat2 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/renameat2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/renameat2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o renameat2 main.o      
+test config.qtbase_corelib.tests.renameat2 succeeded
+looking for library slog2
+Trying source 0 (type inline) of library slog2 ...
+None of [libslog2.so libslog2.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_corelib.libraries.slog2 FAILED
+executing config test statx
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/statx && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/statx
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/statx && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o statx main.o      
+test config.qtbase_corelib.tests.statx succeeded
+looking for library libatomic
+Trying source 0 (type inline) of library libatomic ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libatomic && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libatomic' 'QMAKE_LIBS_LIBATOMIC = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libatomic
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libatomic && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -std=gnu++11 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o libatomic main.o      
+ => source accepted.
+test config.qtbase_corelib.libraries.libatomic succeeded
+looking for library doubleconversion
+Trying source 0 (type inline) of library doubleconversion ...
+None of [libdouble-conversion.so libdouble-conversion.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_corelib.libraries.doubleconversion FAILED
+looking for library pcre2
+Trying source 0 (type pkgConfig) of library pcre2 ...
++ /usr/bin/pkg-config --exists --silence-errors libpcre2-16
++ /usr/bin/pkg-config --modversion libpcre2-16
+> 10.34
++ /usr/bin/pkg-config --libs-only-L libpcre2-16
++ /usr/bin/pkg-config --libs-only-l libpcre2-16
+> -lpcre2-16
++ /usr/bin/pkg-config --cflags libpcre2-16
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/pcre2 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += pcre2' 'QMAKE_LIBS_PCRE2 = /usr/lib/x86_64-linux-gnu/libpcre2-16.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/pcre2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/pcre2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o pcre2 main.o   /usr/lib/x86_64-linux-gnu/libpcre2-16.so   
+ => source accepted.
+test config.qtbase_corelib.libraries.pcre2 succeeded
+executing config test cloexec
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cloexec && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cloexec
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cloexec && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o cloexec main.o      
+test config.qtbase_corelib.tests.cloexec succeeded
+executing config test cxx11_random
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cxx11_random && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cxx11_random
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/cxx11_random && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o cxx11_random main.o      
+test config.qtbase_corelib.tests.cxx11_random succeeded
+executing config test atomicfptr
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/atomicfptr && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/atomicfptr
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/atomicfptr && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -std=gnu++11 -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o atomicfptr main.o      
+test config.qtbase_corelib.tests.atomicfptr succeeded
+looking for library openssl_headers
+Trying source 0 (type inline) of library openssl_headers ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/openssl_headers && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/openssl_headers
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/openssl_headers && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o openssl_headers main.o      
+ => source accepted.
+test config.qtbase_network.libraries.openssl_headers succeeded
+executing config test dtls
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dtls && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dtls
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dtls && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o dtls main.o      
+test config.qtbase_network.tests.dtls succeeded
+Trying source 0 (type makeSpec) of library network ...
+ => source accepted.
+executing config test getifaddrs
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getifaddrs && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += network' 'QMAKE_LIBS_NETWORK = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getifaddrs
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/getifaddrs && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o getifaddrs main.o      
+test config.qtbase_network.tests.getifaddrs succeeded
+executing config test ipv6ifname
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ipv6ifname && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += network' 'QMAKE_LIBS_NETWORK = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ipv6ifname
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/ipv6ifname && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o ipv6ifname main.o      
+test config.qtbase_network.tests.ipv6ifname succeeded
+executing config test linux-netlink
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linux-netlink && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linux-netlink
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linux-netlink && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o linux-netlink main.o      
+test config.qtbase_network.tests.linux-netlink succeeded
+executing config test openssl11
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/openssl11 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += openssl_headers' 'QMAKE_LIBS_OPENSSL_HEADERS = ' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/openssl11
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/openssl11 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o openssl11 main.o      
+test config.qtbase_network.tests.openssl11 succeeded
+looking for library xkbcommon
+Trying source 0 (type pkgConfig) of library xkbcommon ...
++ /usr/bin/pkg-config --exists --silence-errors xkbcommon '>=' 0.5.0
++ /usr/bin/pkg-config --modversion xkbcommon '>=' 0.5.0
+> 0.10.0
++ /usr/bin/pkg-config --libs-only-L xkbcommon '>=' 0.5.0
++ /usr/bin/pkg-config --libs-only-l xkbcommon '>=' 0.5.0
+> -lxkbcommon
++ /usr/bin/pkg-config --cflags xkbcommon '>=' 0.5.0
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xkbcommon && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xkbcommon' 'QMAKE_LIBS_XKBCOMMON = /usr/lib/x86_64-linux-gnu/libxkbcommon.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xkbcommon
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xkbcommon && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o xkbcommon main.o   /usr/lib/x86_64-linux-gnu/libxkbcommon.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xkbcommon succeeded
+looking for library xcb
+Trying source 0 (type pkgConfig) of library xcb ...
++ /usr/bin/pkg-config --exists --silence-errors xcb '>=' 1.9
++ /usr/bin/pkg-config --modversion xcb '>=' 1.9
+> 1.14
++ /usr/bin/pkg-config --libs-only-L xcb '>=' 1.9
++ /usr/bin/pkg-config --libs-only-l xcb '>=' 1.9
+> -lxcb
++ /usr/bin/pkg-config --cflags xcb '>=' 1.9
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xcb && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xcb' 'QMAKE_LIBS_XCB = /usr/lib/x86_64-linux-gnu/libxcb.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xcb
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xcb && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o xcb main.o   /usr/lib/x86_64-linux-gnu/libxcb.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb succeeded
+looking for library atspi
+Trying source 0 (type pkgConfig) of library atspi ...
++ /usr/bin/pkg-config --exists --silence-errors atspi-2
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_gui.libraries.atspi FAILED
+looking for library opengl
+Trying source 0 (type pkgConfig) of library opengl ...
++ /usr/bin/pkg-config --exists --silence-errors gl
++ /usr/bin/pkg-config --modversion gl
+> 1.2
++ /usr/bin/pkg-config --libs-only-L gl
++ /usr/bin/pkg-config --libs-only-l gl
+> -lGL
++ /usr/bin/pkg-config --cflags gl
+header entry 'config.qtbase_gui.libraries.opengl.headers.0' passed condition.
+header entry 'config.qtbase_gui.libraries.opengl.headers.0' passed condition.
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/opengl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += opengl' 'QMAKE_LIBS_OPENGL = /usr/lib/x86_64-linux-gnu/libGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/opengl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/opengl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o opengl main.o   /usr/lib/x86_64-linux-gnu/libGL.so   
+ => source accepted.
+test config.qtbase_gui.libraries.opengl succeeded
+looking for library drm
+Trying source 0 (type pkgConfig) of library drm ...
++ /usr/bin/pkg-config --exists --silence-errors libdrm
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library drm ...
+None of [libdrm.so libdrm.a] found in [] and global paths.
+  => source produced no result.
+Trying source 2 (type inline) of library drm ...
+  => source failed condition 'config.integrity'.
+test config.qtbase_gui.libraries.drm FAILED
+looking for library egl
+Trying source 0 (type pkgConfig) of library egl ...
++ /usr/bin/pkg-config --exists --silence-errors egl
++ /usr/bin/pkg-config --modversion egl
+> 1.5
++ /usr/bin/pkg-config --libs-only-L egl
++ /usr/bin/pkg-config --libs-only-l egl
+> -lEGL
++ /usr/bin/pkg-config --cflags egl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o egl main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+ => source accepted.
+test config.qtbase_gui.libraries.egl succeeded
+looking for library xlib
+Trying source 0 (type makeSpec) of library xlib ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xlib && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xlib' 'QMAKE_LIBS_XLIB = /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xlib
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o xlib main.o   /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xlib succeeded
+executing config test egl-x11
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-x11 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl xlib' 'QMAKE_LIBS_XLIB = /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-x11
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-x11 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o egl-x11 main.o   /usr/lib/x86_64-linux-gnu/libEGL.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so   
+test config.qtbase_gui.tests.egl-x11 succeeded
+Trying source 0 (type makeSpec) of library bcm_host ...
+bcm_host.h not found in [] and global paths.
+  => source produced no result.
+executing config test egl-egldevice
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-egldevice && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-egldevice
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-egldevice && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o egl-egldevice main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+test config.qtbase_gui.tests.egl-egldevice succeeded
+looking for library gbm
+Trying source 0 (type pkgConfig) of library gbm ...
++ /usr/bin/pkg-config --exists --silence-errors gbm
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_gui.libraries.gbm FAILED
+executing config test egl-mali
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-mali && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-mali
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-mali && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:2:10: fatal error: EGL/fbdev_window.h: Aucun fichier ou dossier de ce type
+>     2 | #include <EGL/fbdev_window.h>
+>       |          ^~~~~~~~~~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+test config.qtbase_gui.tests.egl-mali FAILED
+executing config test egl-mali-2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-mali-2 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-mali-2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-mali-2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp: In function ‘int main(int, char**)’:
+> main.cpp:8:5: error: ‘mali_native_window’ was not declared in this scope
+>     8 |     mali_native_window *w = 0;
+>       |     ^~~~~~~~~~~~~~~~~~
+> main.cpp:8:25: error: ‘w’ was not declared in this scope
+>     8 |     mali_native_window *w = 0;
+>       |                         ^
+> make: *** [Makefile:169 : main.o] Erreur 1
+test config.qtbase_gui.tests.egl-mali-2 FAILED
+executing config test egl-viv
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-viv && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-viv
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/egl-viv && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC -DEGL_API_FB=1 -DLINUX=1 -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:3:10: fatal error: EGL/eglvivante.h: Aucun fichier ou dossier de ce type
+>     3 | #include <EGL/eglvivante.h>
+>       |          ^~~~~~~~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+test config.qtbase_gui.tests.egl-viv FAILED
+looking for library xcb_xlib
+Trying source 0 (type pkgConfig) of library xcb_xlib ...
++ /usr/bin/pkg-config --exists --silence-errors x11-xcb
++ /usr/bin/pkg-config --modversion x11-xcb
+> 1.6.9
++ /usr/bin/pkg-config --libs-only-L x11-xcb
++ /usr/bin/pkg-config --libs-only-l x11-xcb
+> -lX11-xcb -lX11 -lxcb
++ /usr/bin/pkg-config --cflags x11-xcb
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xcb_xlib && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += xcb_xlib' 'QMAKE_LIBS_XCB_XLIB = /usr/lib/x86_64-linux-gnu/libX11-xcb.so' 'QMAKE_DEPENDS_XCB_XLIB_CC = XCB XLIB' 'QMAKE_DEPENDS_XCB_XLIB_LD = XCB XLIB' 'QMAKE_LIBS_XLIB = /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so' 'QMAKE_LIBS_XCB = /usr/lib/x86_64-linux-gnu/libxcb.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xcb_xlib
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xcb_xlib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o xcb_xlib main.o   /usr/lib/x86_64-linux-gnu/libX11-xcb.so /usr/lib/x86_64-linux-gnu/libxcb.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libm.so   
+ => source accepted.
+test config.qtbase_gui.libraries.xcb_xlib succeeded
+executing config test evdev
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/evdev && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/evdev
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/evdev && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o evdev main.o      
+test config.qtbase_gui.tests.evdev succeeded
+looking for library freetype
+Trying source 0 (type pkgConfig) of library freetype ...
++ /usr/bin/pkg-config --exists --silence-errors freetype2
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type freetype) of library freetype ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/freetype && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += freetype' 'QMAKE_LIBS_FREETYPE = -lfreetype' 'QMAKE_DEPENDS_FREETYPE_CC = ZLIB' 'QMAKE_DEPENDS_FREETYPE_LD = ZLIB' 'QMAKE_LIBS_ZLIB = /usr/lib/x86_64-linux-gnu/libz.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/freetype
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/freetype && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> main.cpp:2:10: fatal error: ft2build.h: Aucun fichier ou dossier de ce type
+>     2 | #include <ft2build.h>
+>       |          ^~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+ => source failed verification.
+Trying source 2 (type inline) of library freetype ...
+  => source failed condition 'config.wasm'.
+Trying source 3 (type inline) of library freetype ...
+None of [libfreetype.so libfreetype.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.freetype FAILED
+looking for library libinput
+Trying source 0 (type pkgConfig) of library libinput ...
++ /usr/bin/pkg-config --exists --silence-errors libinput
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_gui.libraries.libinput FAILED
+executing config test linuxfb
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linuxfb && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linuxfb
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linuxfb && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o linuxfb main.o      
+test config.qtbase_gui.tests.linuxfb succeeded
+looking for library mtdev
+Trying source 0 (type pkgConfig) of library mtdev ...
++ /usr/bin/pkg-config --exists --silence-errors mtdev
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_gui.libraries.mtdev FAILED
+looking for library openvg
+Trying source 0 (type pkgConfig) of library openvg ...
++ /usr/bin/pkg-config --exists --silence-errors vg
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type makeSpec) of library openvg ...
+None of [libOpenVG.so libOpenVG.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.openvg FAILED
+executing config test qpa_default_platform
+test config.qtbase_gui.tests.qpa_default_platform gave result xcb
+looking for library harfbuzz
+Trying source 0 (type inline) of library harfbuzz ...
+None of [libharfbuzz.so libharfbuzz.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.harfbuzz FAILED
+looking for library libjpeg
+Trying source 0 (type inline) of library libjpeg ...
+  => source failed condition 'config.msvc'.
+Trying source 1 (type inline) of library libjpeg ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libjpeg && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libjpeg' 'QMAKE_LIBS_LIBJPEG = /usr/lib/x86_64-linux-gnu/libjpeg.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libjpeg
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libjpeg && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o libjpeg main.o   /usr/lib/x86_64-linux-gnu/libjpeg.so   
+ => source accepted.
+test config.qtbase_gui.libraries.libjpeg succeeded
+looking for library libpng
+Trying source 0 (type pkgConfig) of library libpng ...
++ /usr/bin/pkg-config --exists --silence-errors libpng
++ /usr/bin/pkg-config --modversion libpng
+> 1.6.37
++ /usr/bin/pkg-config --libs-only-L libpng
++ /usr/bin/pkg-config --libs-only-l libpng
+> -lpng16 -lz
++ /usr/bin/pkg-config --cflags libpng
+> -I/usr/include/libpng16
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libpng && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += libpng' 'QMAKE_LIBS_LIBPNG = /usr/lib/x86_64-linux-gnu/libpng16.so' 'QMAKE_INCDIR_LIBPNG = /usr/include/libpng16' 'QMAKE_DEPENDS_LIBPNG_CC = ZLIB' 'QMAKE_DEPENDS_LIBPNG_LD = ZLIB' 'QMAKE_LIBS_ZLIB = /usr/lib/x86_64-linux-gnu/libz.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libpng
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libpng && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -isystem /usr/include/libpng16 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o libpng main.o   /usr/lib/x86_64-linux-gnu/libpng16.so /usr/lib/x86_64-linux-gnu/libz.so   
+ => source accepted.
+test config.qtbase_gui.libraries.libpng succeeded
+looking for library xcb_icccm
+Trying source 0 (type pkgConfig) of library xcb_icccm ...
++ /usr/bin/pkg-config --exists --silence-errors xcb-icccm '>=' 0.3.9
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xcb_icccm ...
+None of [libxcb-icccm.so libxcb-icccm.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.xcb_icccm FAILED
+looking for library tslib
+Trying source 0 (type inline) of library tslib ...
+None of [libts.so libts.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.tslib FAILED
+looking for library vulkan
+Trying source 0 (type pkgConfig) of library vulkan ...
++ /usr/bin/pkg-config --exists --silence-errors vulkan
++ /usr/bin/pkg-config --modversion vulkan
+> 1.2.131
++ /usr/bin/pkg-config --libs-only-L vulkan
++ /usr/bin/pkg-config --libs-only-l vulkan
+> -lvulkan
++ /usr/bin/pkg-config --cflags vulkan
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/vulkan && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += vulkan' 'QMAKE_LIBS_VULKAN = /usr/lib/x86_64-linux-gnu/libvulkan.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/vulkan
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/vulkan && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o vulkan main.o   /usr/lib/x86_64-linux-gnu/libvulkan.so   
+ => source accepted.
+test config.qtbase_gui.libraries.vulkan succeeded
+executing config test x11prefix
++ /usr/bin/pkg-config --exists --silence-errors x11
++ /usr/bin/pkg-config --variable=prefix x11
+> /usr
+test config.qtbase_gui.tests.x11prefix gave result /usr
+looking for library xcb_glx
+Trying source 0 (type pkgConfig) of library xcb_glx ...
++ /usr/bin/pkg-config --exists --silence-errors xcb-glx
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xcb_glx ...
+None of [libxcb-glx.so libxcb-glx.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.xcb_glx FAILED
+looking for library x11sm
+Trying source 0 (type pkgConfig) of library x11sm ...
++ /usr/bin/pkg-config --exists --silence-errors sm ice
++ /usr/bin/pkg-config --modversion sm ice
+> 1.2.3
+> 1.0.10
++ /usr/bin/pkg-config --libs-only-L sm ice
++ /usr/bin/pkg-config --libs-only-l sm ice
+> -lSM -lICE
++ /usr/bin/pkg-config --cflags sm ice
+ => source accepted.
+test config.qtbase_gui.libraries.x11sm succeeded
+looking for library xkbcommon_x11
+Trying source 0 (type pkgConfig) of library xkbcommon_x11 ...
++ /usr/bin/pkg-config --exists --silence-errors xkbcommon-x11
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xkbcommon_x11 ...
+None of [libxkbcommon-x11.so libxkbcommon-x11.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_gui.libraries.xkbcommon_x11 FAILED
+looking for library gtk3
+Trying source 0 (type pkgConfig) of library gtk3 ...
++ /usr/bin/pkg-config --exists --silence-errors gtk+-3.0 '>=' 3.6
+pkg-config did not find package.
+  => source produced no result.
+test config.qtbase_widgets.libraries.gtk3 FAILED
+looking for library cups
+Trying source 0 (type inline) of library cups ...
+None of [libcups.so libcups.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_printsupport.libraries.cups FAILED
+looking for library db2
+Trying source 0 (type inline) of library db2 ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library db2 ...
+None of [libdb2.so libdb2.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.db2 FAILED
+looking for library ibase
+Trying source 0 (type inline) of library ibase ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library ibase ...
+None of [libgds.so libgds.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.ibase FAILED
+looking for library mysql
+Trying source 0 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 1 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 2 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 3 (type mysqlConfig) of library mysql ...
+mysql_config not found.
+  => source produced no result.
+Trying source 4 (type inline) of library mysql ...
+None of [libmysqlclient_r.so libmysqlclient_r.a] found in [] and global paths.
+  => source produced no result.
+Trying source 5 (type inline) of library mysql ...
+  => source failed condition 'config.win32'.
+Trying source 6 (type inline) of library mysql ...
+None of [libmysqlclient.so libmysqlclient.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.mysql FAILED
+looking for library oci
+Trying source 0 (type inline) of library oci ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library oci ...
+None of [libclntsh.so libclntsh.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.oci FAILED
+looking for library odbc
+Trying source 0 (type inline) of library odbc ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type inline) of library odbc ...
+  => source failed condition 'config.darwin'.
+Trying source 2 (type inline) of library odbc ...
+None of [libodbc.so libodbc.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.odbc FAILED
+looking for library psql
+Trying source 0 (type pkgConfig) of library psql ...
++ /usr/bin/pkg-config --exists --silence-errors libpq
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type psqlConfig) of library psql ...
+pg_config not found.
+  => source produced no result.
+Trying source 2 (type psqlEnv) of library psql ...
+  => source failed condition 'config.win32'.
+Trying source 3 (type psqlEnv) of library psql ...
+None of [libpq.so libpq.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.psql FAILED
+looking for library sqlite2
+Trying source 0 (type inline) of library sqlite2 ...
+None of [libsqlite.so libsqlite.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.sqlite2 FAILED
+looking for library tds
+Trying source 0 (type sybaseEnv) of library tds ...
+  => source failed condition 'config.win32'.
+Trying source 1 (type sybaseEnv) of library tds ...
+None of [libsybdb.so libsybdb.a] found in [] and global paths.
+  => source produced no result.
+test config.qtbase_sqldrivers.libraries.tds FAILED
+executing config test socketcan
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/socketcan && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtserialbus/config.tests/socketcan
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/socketcan && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtserialbus/config.tests/socketcan -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtserialbus/config.tests/socketcan/main.cpp
+> g++ -fuse-ld=gold -o socketcan main.o      
+test config.qtserialbus_serialbus.tests.socketcan succeeded
+executing config test socketcan_fd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/socketcan_fd && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtserialbus/config.tests/socketcan_fd
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/socketcan_fd && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtserialbus/config.tests/socketcan_fd -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtserialbus/config.tests/socketcan_fd/main.cpp
+> g++ -fuse-ld=gold -o socketcan_fd main.o      
+test config.qtserialbus_serialbus.tests.socketcan_fd succeeded
+looking for library jasper
+Trying source 0 (type inline) of library jasper ...
+None of [libjasper.so libjasper.a] found in [] and global paths.
+  => source produced no result.
+test config.qtimageformats_imageformats.libraries.jasper FAILED
+looking for library mng
+Trying source 0 (type inline) of library mng ...
+None of [libmng.so libmng.a] found in [] and global paths.
+  => source produced no result.
+test config.qtimageformats_imageformats.libraries.mng FAILED
+looking for library tiff
+Trying source 0 (type inline) of library tiff ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/tiff && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += tiff' 'QMAKE_LIBS_TIFF = /usr/lib/x86_64-linux-gnu/libtiff.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/tiff
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/tiff && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o tiff main.o   /usr/lib/x86_64-linux-gnu/libtiff.so   
+ => source accepted.
+test config.qtimageformats_imageformats.libraries.tiff succeeded
+looking for library webp
+Trying source 0 (type inline) of library webp ...
+None of [libwebp.so libwebp.a] found in [] and global paths.
+None of [libwebpdemux.so libwebpdemux.a] found in [] and global paths.
+  => source produced no result.
+test config.qtimageformats_imageformats.libraries.webp FAILED
+executing config test d3d12
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/d3d12 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtdeclarative/config.tests/d3d12
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/d3d12 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtdeclarative/config.tests/d3d12 -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o d3d12.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtdeclarative/config.tests/d3d12/d3d12.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtdeclarative/config.tests/d3d12/d3d12.cpp:40:10: fatal error: d3d12.h: Aucun fichier ou dossier de ce type
+>    40 | #include <d3d12.h>
+>       |          ^~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : d3d12.o] Erreur 1
+test config.qtdeclarative_quick.tests.d3d12 FAILED
+looking for library sdl2
+Trying source 0 (type pkgConfig) of library sdl2 ...
++ /usr/bin/pkg-config --exists --silence-errors sdl2
++ /usr/bin/pkg-config --modversion sdl2
+> 2.0.10
++ /usr/bin/pkg-config --libs-only-L sdl2
++ /usr/bin/pkg-config --libs-only-l sdl2
+> -lSDL2
++ /usr/bin/pkg-config --cflags sdl2
+> -D_REENTRANT -I/usr/include/SDL2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/sdl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += sdl2' 'QMAKE_LIBS_SDL2 = /usr/lib/x86_64-linux-gnu/libSDL2.so' 'QMAKE_INCDIR_SDL2 = /usr/include/SDL2' 'QMAKE_DEFINES_SDL2 = _REENTRANT' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtgamepad/config.tests/sdl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/sdl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC -D_REENTRANT -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtgamepad/config.tests/sdl -I. -isystem /usr/include/SDL2 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtgamepad/config.tests/sdl/main.cpp
+> g++ -fuse-ld=gold -o sdl main.o   /usr/lib/x86_64-linux-gnu/libSDL2.so   
+ => source accepted.
+test config.qtgamepad_gamepad.libraries.sdl2 succeeded
+looking for library assimp
+Trying source 0 (type pkgConfig) of library assimp ...
++ /usr/bin/pkg-config --exists --silence-errors assimp '>' 3.3.1
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library assimp ...
+None of [libassimp.so libassimp.a] found in [] and global paths.
+  => source produced no result.
+test config.qt3d_core.libraries.assimp FAILED
+looking for library fbx
+Trying source 0 (type fbx) of library fbx ...
+None of [libfbxsdk.so libfbxsdk.a] found in [] and global paths.
+  => source produced no result.
+test config.qt3d_geometryloaders.libraries.fbx FAILED
+looking for library wayland-client
+Trying source 0 (type pkgConfig) of library wayland-client ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-client
++ /usr/bin/pkg-config --modversion wayland-client
+> 1.18.0
++ /usr/bin/pkg-config --libs-only-L wayland-client
++ /usr/bin/pkg-config --libs-only-l wayland-client
+> -lwayland-client
++ /usr/bin/pkg-config --cflags wayland-client
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-client' 'QMAKE_LIBS_WAYLAND_CLIENT = /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland/main.cpp
+> g++ -fuse-ld=gold -o wayland main.o   /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
+test config.qtwayland_client.libraries.wayland-client succeeded
+looking for library wayland-cursor
+Trying source 0 (type pkgConfig) of library wayland-cursor ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-cursor
++ /usr/bin/pkg-config --modversion wayland-cursor
+> 1.18.0
++ /usr/bin/pkg-config --libs-only-L wayland-cursor
++ /usr/bin/pkg-config --libs-only-l wayland-cursor
+> -lwayland-cursor
++ /usr/bin/pkg-config --cflags wayland-cursor
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_cursor && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-cursor' 'QMAKE_LIBS_WAYLAND_CURSOR = /usr/lib/x86_64-linux-gnu/libwayland-cursor.so' 'QMAKE_DEPENDS_WAYLAND_CURSOR_CC = WAYLAND_CLIENT' 'QMAKE_DEPENDS_WAYLAND_CURSOR_LD = WAYLAND_CLIENT' 'QMAKE_LIBS_WAYLAND_CLIENT = /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_cursor
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_cursor && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_cursor -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_cursor/main.cpp
+> g++ -fuse-ld=gold -o wayland_cursor main.o   /usr/lib/x86_64-linux-gnu/libwayland-cursor.so /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
+test config.qtwayland_client.libraries.wayland-cursor succeeded
+executing config test wayland-scanner
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_scanner && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-client' 'QMAKE_LIBS_WAYLAND_CLIENT = /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_scanner && MAKEFLAGS= /usr/bin/make
+> wayland-scanner client-header < /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner/scanner-test.xml > wayland-scanner-test-client-protocol.h
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner/main.cpp
+> g++ -fuse-ld=gold -o wayland_scanner main.o   /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+test config.qtwayland_client.tests.wayland-scanner succeeded
+executing config test dmabuf-server-buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dmabuf_server_buffer && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dmabuf_server_buffer && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer/main.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer/main.cpp:53:10: fatal error: drm_fourcc.h: Aucun fichier ou dossier de ce type
+>    53 | #include <drm_fourcc.h>
+>       |          ^~~~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+test config.qtwayland_client.tests.dmabuf-server-buffer FAILED
+executing config test drm-egl-server
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/drm_egl_server && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/drm_egl_server
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/drm_egl_server && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/drm_egl_server -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/drm_egl_server/main.cpp
+> g++ -fuse-ld=gold -o drm_egl_server main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+test config.qtwayland_client.tests.drm-egl-server succeeded
+looking for library wayland-egl
+Trying source 0 (type pkgConfig) of library wayland-egl ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-egl
++ /usr/bin/pkg-config --modversion wayland-egl
+> 18.1.0
++ /usr/bin/pkg-config --libs-only-L wayland-egl
++ /usr/bin/pkg-config --libs-only-l wayland-egl
+> -lwayland-egl -lwayland-client
++ /usr/bin/pkg-config --cflags wayland-egl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_egl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-egl' 'QMAKE_LIBS_WAYLAND_EGL = /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_egl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_egl && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_egl -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_egl/main.cpp
+> g++ -fuse-ld=gold -o wayland_egl main.o   /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
+test config.qtwayland_client.libraries.wayland-egl succeeded
+executing config test libhybris-egl-server
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libhybris_egl_server && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libhybris_egl_server && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp:53:10: fatal error: hybris/eglplatformcommon/hybris_nativebufferext.h: Aucun fichier ou dossier de ce type
+>    53 | #include <hybris/eglplatformcommon/hybris_nativebufferext.h>
+>       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+test config.qtwayland_client.tests.libhybris-egl-server FAILED
+executing config test vulkan-server-buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/vulkan_server_buffer && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/vulkan_server_buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/vulkan_server_buffer && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/vulkan_server_buffer -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/vulkan_server_buffer/main.cpp
+> g++ -fuse-ld=gold -o vulkan_server_buffer main.o      
+test config.qtwayland_client.tests.vulkan-server-buffer succeeded
+looking for library xcomposite
+Trying source 0 (type pkgConfig) of library xcomposite ...
++ /usr/bin/pkg-config --exists --silence-errors xcomposite
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xcomposite ...
+None of [libxcomposite.so libxcomposite.a] found in [] and global paths.
+  => source produced no result.
+test config.qtwayland_client.libraries.xcomposite FAILED
+looking for library wayland-server
+Trying source 0 (type pkgConfig) of library wayland-server ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-server
++ /usr/bin/pkg-config --modversion wayland-server
+> 1.18.0
++ /usr/bin/pkg-config --libs-only-L wayland-server
++ /usr/bin/pkg-config --libs-only-l wayland-server
+> -lwayland-server
++ /usr/bin/pkg-config --cflags wayland-server
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-server' 'QMAKE_LIBS_WAYLAND_SERVER = /usr/lib/x86_64-linux-gnu/libwayland-server.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland/main.cpp
+> g++ -fuse-ld=gold -o wayland main.o   /usr/lib/x86_64-linux-gnu/libwayland-server.so   
+ => source accepted.
+test config.qtwayland_compositor.libraries.wayland-server succeeded
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_scanner && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-server' 'QMAKE_LIBS_WAYLAND_SERVER = /usr/lib/x86_64-linux-gnu/libwayland-server.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_scanner && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f wayland-scanner-test-client-protocol.h
+> rm -f main.o
+> rm -f *~ core *.core
+> wayland-scanner client-header < /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner/scanner-test.xml > wayland-scanner-test-client-protocol.h
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_scanner/main.cpp
+> g++ -fuse-ld=gold -o wayland_scanner main.o   /usr/lib/x86_64-linux-gnu/libwayland-server.so   
+executing config test dmabuf-server-buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dmabuf_server_buffer && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/dmabuf_server_buffer && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer/main.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/dmabuf_server_buffer/main.cpp:53:10: fatal error: drm_fourcc.h: Aucun fichier ou dossier de ce type
+>    53 | #include <drm_fourcc.h>
+>       |          ^~~~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+test config.qtwayland_compositor.tests.dmabuf-server-buffer FAILED
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/drm_egl_server && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/drm_egl_server
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/drm_egl_server && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/drm_egl_server -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/drm_egl_server/main.cpp
+> g++ -fuse-ld=gold -o drm_egl_server main.o   /usr/lib/x86_64-linux-gnu/libEGL.so   
+Trying source 0 (type pkgConfig) of library wayland-egl ...
++ /usr/bin/pkg-config --exists --silence-errors wayland-egl
++ /usr/bin/pkg-config --modversion wayland-egl
+> 18.1.0
++ /usr/bin/pkg-config --libs-only-L wayland-egl
++ /usr/bin/pkg-config --libs-only-l wayland-egl
+> -lwayland-egl -lwayland-client
++ /usr/bin/pkg-config --cflags wayland-egl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_egl && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += wayland-egl' 'QMAKE_LIBS_WAYLAND_EGL = /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_egl
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/wayland_egl && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_egl -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/wayland_egl/main.cpp
+> g++ -fuse-ld=gold -o wayland_egl main.o   /usr/lib/x86_64-linux-gnu/libwayland-egl.so /usr/lib/x86_64-linux-gnu/libwayland-client.so   
+ => source accepted.
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libhybris_egl_server && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += egl' 'QMAKE_LIBS_EGL = /usr/lib/x86_64-linux-gnu/libEGL.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libhybris_egl_server && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/libhybris_egl_server/main.cpp:53:10: fatal error: hybris/eglplatformcommon/hybris_nativebufferext.h: Aucun fichier ou dossier de ce type
+>    53 | #include <hybris/eglplatformcommon/hybris_nativebufferext.h>
+>       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+executing config test vulkan-server-buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/vulkan_server_buffer && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/vulkan_server_buffer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/vulkan_server_buffer && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f main.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/vulkan_server_buffer -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwayland/config.tests/vulkan_server_buffer/main.cpp
+> g++ -fuse-ld=gold -o vulkan_server_buffer main.o      
+test config.qtwayland_compositor.tests.vulkan-server-buffer succeeded
+Trying source 0 (type pkgConfig) of library xcomposite ...
++ /usr/bin/pkg-config --exists --silence-errors xcomposite
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library xcomposite ...
+None of [libxcomposite.so libxcomposite.a] found in [] and global paths.
+  => source produced no result.
+looking for library bluez
+Trying source 0 (type pkgConfig) of library bluez ...
++ /usr/bin/pkg-config --exists --silence-errors bluez
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library bluez ...
+None of [libbluetooth.so libbluetooth.a] found in [] and global paths.
+  => source produced no result.
+test config.qtconnectivity_bluetooth.libraries.bluez FAILED
+looking for library sensorfw
+Trying source 0 (type pkgConfig) of library sensorfw ...
++ /usr/bin/pkg-config --exists --silence-errors sensord-qt5
+pkg-config did not find package.
+  => source produced no result.
+test config.qtsensors_sensors.libraries.sensorfw FAILED
+looking for library gypsy
+Trying source 0 (type pkgConfig) of library gypsy ...
++ /usr/bin/pkg-config --exists --silence-errors gypsy gconf-2.0
+pkg-config did not find package.
+  => source produced no result.
+test config.qtlocation_positioning.libraries.gypsy FAILED
+executing config test winrt_geolocation
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/winrt && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtlocation/config.tests/winrt
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/winrt && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtlocation/config.tests/winrt -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtlocation/config.tests/winrt/main.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtlocation/config.tests/winrt/main.cpp:30:10: fatal error: windows.system.h: Aucun fichier ou dossier de ce type
+>    30 | #include <windows.system.h>
+>       |          ^~~~~~~~~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : main.o] Erreur 1
+test config.qtlocation_positioning.tests.winrt_geolocation FAILED
+looking for library alsa
+Trying source 0 (type inline) of library alsa ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/alsa && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += alsa' 'QMAKE_LIBS_ALSA = /usr/lib/x86_64-linux-gnu/libasound.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/alsa
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/alsa && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/alsa -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o alsatest.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/alsa/alsatest.cpp
+> g++ -fuse-ld=gold -o alsa alsatest.o   /usr/lib/x86_64-linux-gnu/libasound.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.alsa succeeded
+looking for library gstreamer_1_0
+Trying source 0 (type pkgConfig) of library gstreamer_1_0 ...
++ /usr/bin/pkg-config --exists --silence-errors gstreamer-1.0 gstreamer-base-1.0 gstreamer-audio-1.0 gstreamer-video-1.0 gstreamer-pbutils-1.0
++ /usr/bin/pkg-config --modversion gstreamer-1.0 gstreamer-base-1.0 gstreamer-audio-1.0 gstreamer-video-1.0 gstreamer-pbutils-1.0
+> 1.16.2
+> 1.16.2
+> 1.16.2
+> 1.16.2
+> 1.16.2
++ /usr/bin/pkg-config --libs-only-L gstreamer-1.0 gstreamer-base-1.0 gstreamer-audio-1.0 gstreamer-video-1.0 gstreamer-pbutils-1.0
++ /usr/bin/pkg-config --libs-only-l gstreamer-1.0 gstreamer-base-1.0 gstreamer-audio-1.0 gstreamer-video-1.0 gstreamer-pbutils-1.0
+> -lgstpbutils-1.0 -lgstaudio-1.0 -lgstvideo-1.0 -lgstbase-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0
++ /usr/bin/pkg-config --cflags gstreamer-1.0 gstreamer-base-1.0 gstreamer-audio-1.0 gstreamer-video-1.0 gstreamer-pbutils-1.0
+> -pthread -I/usr/include/gstreamer-1.0 -I/usr/include/orc-0.4 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+Note: Dropped compiler flags '-pthread'.
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += gstreamer_1_0' 'QMAKE_LIBS_GSTREAMER_1_0 = /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_GSTREAMER_1_0 = /usr/include/gstreamer-1.0 /usr/include/orc-0.4 /usr/include/gstreamer-1.0 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer -I. -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/orc-0.4 -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer/main.cpp
+> g++ -fuse-ld=gold -o gstreamer main.o   /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.gstreamer_1_0 succeeded
+looking for library gstreamer_app_1_0
+Trying source 0 (type pkgConfig) of library gstreamer_app_1_0 ...
++ /usr/bin/pkg-config --exists --silence-errors gstreamer-app-1.0
++ /usr/bin/pkg-config --modversion gstreamer-app-1.0
+> 1.16.2
++ /usr/bin/pkg-config --libs-only-L gstreamer-app-1.0
++ /usr/bin/pkg-config --libs-only-l gstreamer-app-1.0
+> -lgstapp-1.0 -lgstbase-1.0 -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0
++ /usr/bin/pkg-config --cflags gstreamer-app-1.0
+> -pthread -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+Note: Dropped compiler flags '-pthread'.
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer_appsrc && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += gstreamer_app_1_0' 'QMAKE_LIBS_GSTREAMER_APP_1_0 = /usr/lib/x86_64-linux-gnu/libgstapp-1.0.so' 'QMAKE_DEPENDS_GSTREAMER_APP_1_0_CC = GSTREAMER_1_0' 'QMAKE_DEPENDS_GSTREAMER_APP_1_0_LD = GSTREAMER_1_0' 'QMAKE_LIBS_GSTREAMER_1_0 = /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_GSTREAMER_1_0 = /usr/include/gstreamer-1.0 /usr/include/orc-0.4 /usr/include/gstreamer-1.0 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_appsrc
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer_appsrc && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_appsrc -I. -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/orc-0.4 -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_appsrc/main.cpp
+> g++ -fuse-ld=gold -o gstreamer_appsrc main.o   /usr/lib/x86_64-linux-gnu/libgstapp-1.0.so /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.gstreamer_app_1_0 succeeded
+executing config test gstreamer_encodingprofiles
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer_encodingprofiles && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += gstreamer_1_0' 'QMAKE_LIBS_GSTREAMER_1_0 = /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_GSTREAMER_1_0 = /usr/include/gstreamer-1.0 /usr/include/orc-0.4 /usr/include/gstreamer-1.0 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_encodingprofiles
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer_encodingprofiles && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_encodingprofiles -I. -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/orc-0.4 -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_encodingprofiles/main.cpp
+> g++ -fuse-ld=gold -o gstreamer_encodingprofiles main.o   /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+test config.qtmultimedia_multimedia.tests.gstreamer_encodingprofiles succeeded
+looking for library gstreamer_photography_1_0
+Trying source 0 (type inline) of library gstreamer_photography_1_0 ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer_photography && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += gstreamer_photography_1_0' 'QMAKE_LIBS_GSTREAMER_PHOTOGRAPHY_1_0 = /usr/lib/x86_64-linux-gnu/libgstphotography-1.0.so' 'QMAKE_DEPENDS_GSTREAMER_PHOTOGRAPHY_1_0_CC = GSTREAMER_1_0' 'QMAKE_DEPENDS_GSTREAMER_PHOTOGRAPHY_1_0_LD = GSTREAMER_1_0' 'QMAKE_LIBS_GSTREAMER_1_0 = /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_GSTREAMER_1_0 = /usr/include/gstreamer-1.0 /usr/include/orc-0.4 /usr/include/gstreamer-1.0 /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_photography
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/gstreamer_photography && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_photography -I. -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/orc-0.4 -isystem /usr/include/gstreamer-1.0 -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/gstreamer_photography/main.cpp
+> g++ -fuse-ld=gold -o gstreamer_photography main.o   /usr/lib/x86_64-linux-gnu/libgstphotography-1.0.so /usr/lib/x86_64-linux-gnu/libgstpbutils-1.0.so /usr/lib/x86_64-linux-gnu/libgstaudio-1.0.so /usr/lib/x86_64-linux-gnu/libgstvideo-1.0.so /usr/lib/x86_64-linux-gnu/libgstbase-1.0.so /usr/lib/x86_64-linux-gnu/libgstreamer-1.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.gstreamer_photography_1_0 succeeded
+executing config test linux_v4l
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linux_v4l && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/linux_v4l
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/linux_v4l && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/linux_v4l -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/linux_v4l/main.cpp
+> g++ -fuse-ld=gold -o linux_v4l main.o      
+test config.qtmultimedia_multimedia.tests.linux_v4l succeeded
+looking for library openal
+Trying source 0 (type pkgConfig) of library openal ...
++ /usr/bin/pkg-config --exists --silence-errors openal
+pkg-config did not find package.
+  => source produced no result.
+Trying source 1 (type inline) of library openal ...
+  => source failed condition 'config.win32'.
+Trying source 2 (type inline) of library openal ...
+  => source failed condition 'config.darwin'.
+Trying source 3 (type inline) of library openal ...
+None of [libopenal.so libopenal.a] found in [] and global paths.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.openal FAILED
+looking for library pulseaudio
+Trying source 0 (type pkgConfig) of library pulseaudio ...
++ /usr/bin/pkg-config --exists --silence-errors libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --modversion libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> 13.99.1
+> 13.99.1
++ /usr/bin/pkg-config --libs-only-L libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --libs-only-l libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -lpulse-mainloop-glib -lpulse -lglib-2.0
++ /usr/bin/pkg-config --cflags libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -D_REENTRANT -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/pulseaudio && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += pulseaudio' 'QMAKE_LIBS_PULSEAUDIO = /usr/lib/x86_64-linux-gnu/libpulse-mainloop-glib.so /usr/lib/x86_64-linux-gnu/libpulse.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so' 'QMAKE_INCDIR_PULSEAUDIO = /usr/include/glib-2.0 /usr/lib/x86_64-linux-gnu/glib-2.0/include' 'QMAKE_DEFINES_PULSEAUDIO = _REENTRANT' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/pulseaudio
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/pulseaudio && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC -D_REENTRANT -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/pulseaudio -I. -isystem /usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o pulseaudio.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtmultimedia/config.tests/pulseaudio/pulseaudio.cpp
+> g++ -fuse-ld=gold -o pulseaudio pulseaudio.o   /usr/lib/x86_64-linux-gnu/libpulse-mainloop-glib.so /usr/lib/x86_64-linux-gnu/libpulse.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so   
+ => source accepted.
+test config.qtmultimedia_multimedia.libraries.pulseaudio succeeded
+looking for library libresourceqt5
+Trying source 0 (type pkgConfig) of library libresourceqt5 ...
++ /usr/bin/pkg-config --exists --silence-errors libresourceqt5
+pkg-config did not find package.
+  => source produced no result.
+test config.qtmultimedia_multimedia.libraries.libresourceqt5 FAILED
+executing config test libclang
+Cannot determine version of clang installation in /usr/llvm.
+test config.qttools_qdoc.tests.libclang FAILED
+executing config test webengine-alsa
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/alsa && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/alsa
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/alsa && MAKEFLAGS= /usr/bin/make clean && MAKEFLAGS= /usr/bin/make
+> rm -f alsatest.o
+> rm -f *~ core *.core
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/alsa -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o alsatest.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/alsa/alsatest.cpp
+> g++ -fuse-ld=gold -o alsa alsatest.o      
+test config.qtwebengine_core.tests.webengine-alsa succeeded
+executing config test webengine-embedded-build
+test config.qtwebengine_core.tests.webengine-embedded-build FAILED
+executing config test webengine-bison
+Found bison from path: /usr/bin/bison
+test config.qtwebengine_core.tests.webengine-bison succeeded
+executing config test webengine-flex
+Found flex from path: /usr/bin/flex
+test config.qtwebengine_core.tests.webengine-flex succeeded
+executing config test webengine-gperf
+Found gperf from path: /usr/bin/gperf
+test config.qtwebengine_core.tests.webengine-gperf succeeded
+executing config test webengine-host-pkg-config
+Found host pkg-config: /usr/bin/pkg-config
+test config.qtwebengine_core.tests.webengine-host-pkg-config gave result /usr/bin/pkg-config
+executing config test webengine-noexecstack
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests && g++ -pipe -fuse-ld=gold -Wl,-z,noexecstack -o conftest-out conftest.cpp
+test config.qtwebengine_core.tests.webengine-noexecstack succeeded
+looking for library webengine-x11
+Trying source 0 (type pkgConfig) of library webengine-x11 ...
++ /usr/bin/pkg-config --exists --silence-errors x11
++ /usr/bin/pkg-config --modversion x11
+> 1.6.9
++ /usr/bin/pkg-config --libs-only-L x11
++ /usr/bin/pkg-config --libs-only-l x11
+> -lX11
++ /usr/bin/pkg-config --cflags x11
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-x11 succeeded
+looking for library webengine-libdrm
+Trying source 0 (type pkgConfig) of library webengine-libdrm ...
++ /usr/bin/pkg-config --exists --silence-errors libdrm
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-libdrm FAILED
+looking for library webengine-poppler-cpp
+Trying source 0 (type pkgConfig) of library webengine-poppler-cpp ...
++ /usr/bin/pkg-config --exists --silence-errors poppler-cpp
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-poppler-cpp FAILED
+looking for library pulseaudio
+Trying source 0 (type pkgConfig) of library pulseaudio ...
++ /usr/bin/pkg-config --exists --silence-errors libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --modversion libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> 13.99.1
+> 13.99.1
++ /usr/bin/pkg-config --libs-only-L libpulse '>=' 0.9.10 libpulse-mainloop-glib
++ /usr/bin/pkg-config --libs-only-l libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -lpulse-mainloop-glib -lpulse -lglib-2.0
++ /usr/bin/pkg-config --cflags libpulse '>=' 0.9.10 libpulse-mainloop-glib
+> -D_REENTRANT -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+ => source accepted.
+test config.qtwebengine_core.libraries.pulseaudio succeeded
+executing config test webengine-python2
+'python2' not found in PATH. Checking for 'python'.
+'python' not found in PATH. Giving up.
+test config.qtwebengine_core.tests.webengine-python2 gave result 
+looking for library webengine-dbus
+Trying source 0 (type pkgConfig) of library webengine-dbus ...
++ /usr/bin/pkg-config --exists --silence-errors dbus-1
++ /usr/bin/pkg-config --modversion dbus-1
+> 1.12.16
++ /usr/bin/pkg-config --libs-only-L dbus-1
++ /usr/bin/pkg-config --libs-only-l dbus-1
+> -ldbus-1
++ /usr/bin/pkg-config --cflags dbus-1
+> -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-dbus succeeded
+looking for library webengine-fontconfig
+Trying source 0 (type pkgConfig) of library webengine-fontconfig ...
++ /usr/bin/pkg-config --exists --silence-errors fontconfig
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-fontconfig FAILED
+looking for library webengine-glib
+Trying source 0 (type pkgConfig) of library webengine-glib ...
++ /usr/bin/pkg-config --exists --silence-errors glib-2.0 '>=' 2.32.0
++ /usr/bin/pkg-config --modversion glib-2.0 '>=' 2.32.0
+> 2.64.6
++ /usr/bin/pkg-config --libs-only-L glib-2.0 '>=' 2.32.0
++ /usr/bin/pkg-config --libs-only-l glib-2.0 '>=' 2.32.0
+> -lglib-2.0
++ /usr/bin/pkg-config --cflags glib-2.0 '>=' 2.32.0
+> -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-glib succeeded
+executing config test webengine-glibc
+Found ldd from path: /usr/bin/ldd
++ /usr/bin/ldd --version
+> ldd (Ubuntu GLIBC 2.31-0ubuntu9.2) 2.31
+> Copyright © 2020 Free Software Foundation, Inc.
+> Ce logiciel est libre; voir les sources pour les conditions de
+> reproduction. AUCUNE garantie n'est donnée; tant pour des raisons
+> COMMERCIALES que pour RÉPONDRE À UN BESOIN PARTICULIER.
+> Écrits par Roland McGrath et Ulrich Drepper.
+Found libc version: 2.31
+test config.qtwebengine_core.tests.webengine-glibc succeeded
+looking for library webengine-jpeglib
+Trying source 0 (type pkgConfig) of library webengine-jpeglib ...
++ /usr/bin/pkg-config --exists --silence-errors libjpeg
++ /usr/bin/pkg-config --modversion libjpeg
+> 2.0.3
++ /usr/bin/pkg-config --libs-only-L libjpeg
+> -L/build/libjpeg-turbo-6HlDLQ/libjpeg-turbo-2.0.3/obj-x86_64-linux-gnu/lib/x86_64-linux-gnu
++ /usr/bin/pkg-config --libs-only-l libjpeg
+> -ljpeg
+Library path /build/libjpeg-turbo-6HlDLQ/libjpeg-turbo-2.0.3/obj-x86_64-linux-gnu/lib/x86_64-linux-gnu is invalid.
+  => source produced no result.
+Trying source 1 (type inline) of library webengine-jpeglib ...
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/webengine-jpeglib && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" 'QMAKE_USE += webengine-jpeglib' 'QMAKE_LIBS_WEBENGINE_JPEGLIB = /usr/lib/x86_64-linux-gnu/libjpeg.so' /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/webengine-jpeglib
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/webengine-jpeglib && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o main.o main.cpp
+> g++ -fuse-ld=gold -o webengine-jpeglib main.o   /usr/lib/x86_64-linux-gnu/libjpeg.so   
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-jpeglib succeeded
+looking for library webengine-jsoncpp
+Trying source 0 (type pkgConfig) of library webengine-jsoncpp ...
++ /usr/bin/pkg-config --exists --silence-errors jsoncpp
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-jsoncpp FAILED
+executing config test webengine-khr
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/khr && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/khr
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/khr && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/khr -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o khr.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/khr/khr.cpp
+> g++ -fuse-ld=gold -o khr khr.o      
+test config.qtwebengine_core.tests.webengine-khr succeeded
+looking for library webengine-lcms2
+Trying source 0 (type pkgConfig) of library webengine-lcms2 ...
++ /usr/bin/pkg-config --exists --silence-errors lcms2
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-lcms2 FAILED
+looking for library webengine-libevent
+Trying source 0 (type pkgConfig) of library webengine-libevent ...
++ /usr/bin/pkg-config --exists --silence-errors libevent
++ /usr/bin/pkg-config --modversion libevent
+> 2.1.11-stable
++ /usr/bin/pkg-config --libs-only-L libevent
++ /usr/bin/pkg-config --libs-only-l libevent
+> -levent
++ /usr/bin/pkg-config --cflags libevent
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-libevent succeeded
+executing config test webengine-libvpx
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/libvpx && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/libvpx
+> Project ERROR: vpx development package not found
+test config.qtwebengine_core.tests.webengine-libvpx FAILED
+looking for library webengine-webp
+Trying source 0 (type pkgConfig) of library webengine-webp ...
++ /usr/bin/pkg-config --exists --silence-errors libwebp libwebpmux libwebpdemux
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-webp FAILED
+looking for library webengine-libxml2
+Trying source 0 (type pkgConfig) of library webengine-libxml2 ...
++ /usr/bin/pkg-config --exists --silence-errors libxml-2.0 libxslt
++ /usr/bin/pkg-config --modversion libxml-2.0 libxslt
+> 2.9.10
+> 1.1.34
++ /usr/bin/pkg-config --libs-only-L libxml-2.0 libxslt
++ /usr/bin/pkg-config --libs-only-l libxml-2.0 libxslt
+> -lxslt -lxml2
++ /usr/bin/pkg-config --cflags libxml-2.0 libxslt
+> -I/usr/include/libxml2
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-libxml2 succeeded
+executing config test webengine-libxml2-compatible
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xml2 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/xml2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/xml2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/xml2 -I. -isystem /usr/include/libxml2 -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o xml2.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/xml2/xml2.cpp
+> g++ -fuse-ld=gold -o xml2 xml2.o   -lxml2   
+test config.qtwebengine_core.tests.webengine-libxml2-compatible succeeded
+looking for library webengine-minizip
+Trying source 0 (type pkgConfig) of library webengine-minizip ...
++ /usr/bin/pkg-config --exists --silence-errors minizip
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-minizip FAILED
+executing config test webengine-ninja
+Building own ninja
+test config.qtwebengine_core.tests.webengine-ninja FAILED
+looking for library webengine-nss
+Trying source 0 (type pkgConfig) of library webengine-nss ...
++ /usr/bin/pkg-config --exists --silence-errors nss '>=' 3.26
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-nss FAILED
+looking for library webengine-opus
+Trying source 0 (type pkgConfig) of library webengine-opus ...
++ /usr/bin/pkg-config --exists --silence-errors opus
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-opus FAILED
+looking for library webengine-png
+Trying source 0 (type pkgConfig) of library webengine-png ...
++ /usr/bin/pkg-config --exists --silence-errors libpng '>=' 1.6.0
++ /usr/bin/pkg-config --modversion libpng '>=' 1.6.0
+> 1.6.37
++ /usr/bin/pkg-config --libs-only-L libpng '>=' 1.6.0
++ /usr/bin/pkg-config --libs-only-l libpng '>=' 1.6.0
+> -lpng16 -lz
++ /usr/bin/pkg-config --cflags libpng '>=' 1.6.0
+> -I/usr/include/libpng16
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-png succeeded
+looking for library webengine-protobuf
+Trying source 0 (type pkgConfig) of library webengine-protobuf ...
++ /usr/bin/pkg-config --exists --silence-errors protobuf
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-protobuf FAILED
+executing config test webengine-re2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/re2 && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/re2
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/re2 && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/re2 -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o re2.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/re2/re2.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/re2/re2.cpp:29:10: fatal error: re2/re2.h: Aucun fichier ou dossier de ce type
+>    29 | #include <re2/re2.h>
+>       |          ^~~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : re2.o] Erreur 1
+test config.qtwebengine_core.tests.webengine-re2 FAILED
+executing config test webengine-snappy
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/snappy && /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/qtbase/bin/qmake "CONFIG -= qt debug_and_release app_bundle lib_bundle" "CONFIG += shared use_gold_linker warn_off console single_arch" /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/snappy
++ cd /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5-build/config.tests/snappy && MAKEFLAGS= /usr/bin/make
+> g++ -c -pipe -g -w -fPIC  -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/snappy -I. -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtbase/mkspecs/linux-g++ -o snappy.o /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/snappy/snappy.cpp
+> /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/qt5/qtwebengine/config.tests/snappy/snappy.cpp:29:10: fatal error: snappy.h: Aucun fichier ou dossier de ce type
+>    29 | #include <snappy.h>
+>       |          ^~~~~~~~~~
+> compilation terminated.
+> make: *** [Makefile:169 : snappy.o] Erreur 1
+test config.qtwebengine_core.tests.webengine-snappy FAILED
+looking for library webengine-xcomposite
+Trying source 0 (type pkgConfig) of library webengine-xcomposite ...
++ /usr/bin/pkg-config --exists --silence-errors xcomposite
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-xcomposite FAILED
+looking for library webengine-xcursor
+Trying source 0 (type pkgConfig) of library webengine-xcursor ...
++ /usr/bin/pkg-config --exists --silence-errors xcursor
++ /usr/bin/pkg-config --modversion xcursor
+> 1.2.0
++ /usr/bin/pkg-config --libs-only-L xcursor
++ /usr/bin/pkg-config --libs-only-l xcursor
+> -lXcursor
++ /usr/bin/pkg-config --cflags xcursor
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-xcursor succeeded
+looking for library webengine-xi
+Trying source 0 (type pkgConfig) of library webengine-xi ...
++ /usr/bin/pkg-config --exists --silence-errors xi
++ /usr/bin/pkg-config --modversion xi
+> 1.7.10
++ /usr/bin/pkg-config --libs-only-L xi
++ /usr/bin/pkg-config --libs-only-l xi
+> -lXi
++ /usr/bin/pkg-config --cflags xi
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-xi succeeded
+looking for library webengine-xtst
+Trying source 0 (type pkgConfig) of library webengine-xtst ...
++ /usr/bin/pkg-config --exists --silence-errors xtst
+pkg-config did not find package.
+  => source produced no result.
+test config.qtwebengine_core.libraries.webengine-xtst FAILED
+looking for library webengine-zlib
+Trying source 0 (type pkgConfig) of library webengine-zlib ...
++ /usr/bin/pkg-config --exists --silence-errors zlib
++ /usr/bin/pkg-config --modversion zlib
+> 1.2.11
++ /usr/bin/pkg-config --libs-only-L zlib
++ /usr/bin/pkg-config --libs-only-l zlib
+> -lz
++ /usr/bin/pkg-config --cflags zlib
+ => source accepted.
+test config.qtwebengine_core.libraries.webengine-zlib succeeded
