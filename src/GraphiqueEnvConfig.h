@@ -2,4 +2,4 @@
 #define GraphiqueEnv_VERSION_MAJOR 1
 #define GraphiqueEnv_VERSION_MINOR 0
 
-#define USE_QT
+/* #undef USE_QT */

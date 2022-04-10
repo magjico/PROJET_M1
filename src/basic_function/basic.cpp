@@ -1,0 +1,40 @@
+#include "basic.h"
+
+char* LoadSource(const char *filename)
+{
+    char *src = NULL;
+    FILE *fp  = NULL;
+    size_t size;
+    
+    /* ouverture du fichier */
+    fp = fopen(filename, "r");
+    if (fp == NULL) {
+        fprintf(stderr, "impossible d'ouvrir le fichier %s\n", filename);
+        return NULL;
+    }
+
+    /* On récupère la longueur du fichier */
+    fseek(fp, 0, SEEK_END);
+    size = ftell(fp);
+
+    /* On se replace au début du fichier */
+    rewind(fp);
+
+    /* On alloue la mémoire pour src */
+    src = (char *)malloc((size+1)*sizeof(char));
+    if(src == NULL) {
+        fclose(fp);
+        fprintf(stderr, "erreur d'allocution de la memoire\n");
+        return NULL;
+    }
+
+    /* Lecture du fichier et écriture de src */
+    for(size_t i=0; i<size; i++)
+        src[i] = fgetc(fp);
+    src[size] = '\0';
+
+    /* fermeture du fichier */
+    fclose(fp);
+
+    return src;
+}

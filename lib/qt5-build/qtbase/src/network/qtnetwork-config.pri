@@ -1,9 +1,0 @@
-QT.network.enabled_features = networkinterface bearermanagement dnslookup dtls ftp http localserver networkdiskcache networkproxy opensslv11 socks5 ssl udpsocket
-QT.network.disabled_features = sctp
-QT.network.QT_CONFIG = networkinterface bearermanagement openssl ftp getifaddrs http ipv6ifname localserver networkdiskcache networkproxy socks5 ssl udpsocket
-QT.network.exports = 
-QT.network_private.enabled_features = openssl linux-netlink system-proxies
-QT.network_private.disabled_features = securetransport openssl-linked libproxy
-QT.network_private.libraries = openssl network
-QMAKE_LIBS_OPENSSL = 
-QMAKE_LIBS_NETWORK = 

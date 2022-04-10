@@ -3,36 +3,42 @@
 #include "GraphiqueEnvConfig.h"
 
 #ifdef USE_QT
-    #include <QtWidgets>
+    #include <QApplication>
+    #include "./window/mainwindow.h"
 #else
-    #include <GLFW/glfw3.h>
+    #include "./windowGLFW/mainwindow.h"
 #endif
 
 int main(int argc, char *argv[])
 {
-    if (argc < 2) {
+    if (argc < 3) {
         // report version
         std::cout << argv[0] << " Version " << GraphiqueEnv_VERSION_MAJOR << "." << GraphiqueEnv_VERSION_MINOR << std::endl;
         std::cout << "Usage: " << argv[0] << " number" << std::endl;
+        std::cout << "enter ./GraphiqueEnv <version> <app>" << std::endl;
         return 1;
     }
-    std::cout << "Hello Window" << std::endl;
+
 #ifdef USE_QT
     QApplication app(argc, argv);
-    // Recuperer la taille de l'ecran.
-    QScreen *screen = QGuiApplication::primaryScreen();
-    QRect screenGeometry = screen->geometry();
-    int height = screenGeometry.height();
-    int width = screenGeometry.width();
-    // Building de l'ecran
-    QWidget window;
-    window.resize(width, height);
-    window.show();
-    window.setWindowTitle(
-        QApplication::translate("toplevel", "Top-level widget")
-    );
+    MainWindow w;
+    w.activate(std::stoi(argv[2]));
+    w.show();
     return app.exec();
 #else
+    // init glfw :
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    try {
+        MainWindow w;
+        w.activate(std::stoi(argv[2]));
+    } catch (const char* err) {
+        std::cout << err << std::endl;
+    }
+
 #endif
     return 0;
 }
