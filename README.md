@@ -1,8 +1,8 @@
 # PROJET INFORMATIQUE GRAPHIQUE M1-IAFA <!-- omit in toc -->
 
-| Prénom |  NOM  | numéro étudiant |
-| :----- | :---: | --------------: |
-| César  | PUJOL |        21702647 |
+| Prénom |  NOM  | numéro étudiant |                               github |
+| :----- | :---: | :-------------: | -----------------------------------: |
+| César  | PUJOL |    21702647     | https://github.com/magjico/Projet_M1 |
 
 Fonctionnalité :
 
@@ -54,7 +54,7 @@ ___
 
 ### L'architecture code :
 - **basic** : (situé dans le répertoire ___./src/basic_function___)<br /> ce fichier contient des fonctions utilitaire qui n'appartiennent à aucun objet. 
-- L'objet **openglObject** : (situé dans le répertoire ___./src/openglObject___).<br /> Il sert de base à tous les objets pour lesquels je souhaite avoir un rendu. Il est constitué de la fonction **loadShader** et **loadProgram** qui ce charge respectivement de récupérer les données texte des fichier shader et de les charger afin de créer un shader et de construire un objet program qui me permet de faire éxécuter les shaders par la carte graphique.
+- L'objet **openglObject** : (situé dans le répertoire ___./src/openglObject___).<br /> Il sert de base à tous les objets pour lesquels je souhaite avassimpn de créer un shader et de construire un objet program qui me permet de faire éxécuter les shaders par la carte graphique.
 - L'objet **SimpleTriangle** : (situé dans le répertoire ___./src/hello_triangles___). <br /> Il hérite de **openglObject**. Il me permet de générer à partir d'un ensemble de sommet et d'indices un affichage de la figure correspondant il possède aussi un contructeur vide pour générer la démo.
 - L'objet **BesierCurve** : (situé dans le répertoire ___./src/besier_curves___).<br /> Il représente la représentation paramétrique d'une courbe de bézier avec une longueur de décomposition donnée.
 - L'objet **BesierSurface** : (situé dans le répertoire ___./src/besier_surface___).<br />Il hérite de **openglObject**. Il me permet de générer des surfaces de bézier en lui passant en entrée des points de controle et une taille de décomposition. Il possède un objet SimpleTriangle qui me permet de l'afficher.
