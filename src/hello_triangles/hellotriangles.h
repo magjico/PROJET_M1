@@ -9,7 +9,7 @@
 
 class SimpleTriangle : public OpenglObject {
     public:
-        explicit SimpleTriangle(std::vector<GLfloat>& vertices, std::vector<GLuint>& indices);
+        explicit SimpleTriangle(std::vector<GLfloat>& vertices, std::vector<GLuint>& indices, char* shader_vertex_file, char* shader_pixel_file);
         explicit SimpleTriangle();
         ~SimpleTriangle() override;
 
@@ -34,6 +34,9 @@ class SimpleTriangle : public OpenglObject {
         GLuint _pshader;
         // program
         GLuint _program;
+
+        char *shader_vertex_path;
+        char *shader_pixel_path;
 
         void init(void);
 };

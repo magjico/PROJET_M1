@@ -6,7 +6,7 @@
 
 class BesierSurface : public OpenglObject {
     public:
-        explicit BesierSurface(std::vector<std::vector<glm::vec3>>& checkpoints, size_t degree_gen, size_t degree_dir);
+        explicit BesierSurface(std::vector<std::vector<glm::vec3>>& checkpoints, size_t degree_gen, size_t degree_dir, char* shader_vertex_file, char* shader_pixel_file);
         ~BesierSurface();
 
         void draw(void) override;

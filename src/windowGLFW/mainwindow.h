@@ -10,16 +10,18 @@
 
 class MainWindow {
     public :
-        explicit MainWindow();
+        explicit MainWindow(float *amb);
         ~MainWindow();
 
         int activate(unsigned int numdemo);
         void draw(OpenglObject* obj);
+        void MainWindow::draw(OpenglObject* obj, float *lightcolor, float *objcolor);
         
     private :
         GLFWwindow* window;
         int width;
         int height;
+        float *ambiant;
 };
 
 #endif

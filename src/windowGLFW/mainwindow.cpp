@@ -9,7 +9,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
-MainWindow::MainWindow()
+MainWindow::MainWindow(float *amb)
 {
     const GLFWvidmode * mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
     width   = mode->width;
@@ -27,6 +27,8 @@ MainWindow::MainWindow()
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         throw "Failed to initialize GLAD";
+
+    ambiant = amb;
 }
 
 MainWindow::~MainWindow()
@@ -35,6 +37,20 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::draw(OpenglObject* obj)
+{
+
+    while (!glfwWindowShouldClose(window)){
+        processInput(window);
+        glPolygonMode(GL_FRONT_AND_BACK, draw_value);
+
+        obj->draw();
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+}
+
+void MainWindow::draw(OpenglObject* obj, float *lightcolor, float *objcolor)
 {
     while (!glfwWindowShouldClose(window)){
         processInput(window);
@@ -100,7 +116,7 @@ int MainWindow::activate(unsigned int numdemo)
             std::cout << "Hello Bezier" << std::endl;
             
             try {
-                obj = new BesierSurface(checkpoint, 10, 12);
+                obj = new BesierSurface(checkpoint, 10, 12, "./shader/hello_triangle_vshader.vert", "./shader/hello_triangle_pshader.frag");
                 draw(obj);
             } catch (const char* err) {
                 std::cout << err << std::endl;
@@ -117,7 +133,26 @@ int MainWindow::activate(unsigned int numdemo)
                     SimpleCube *cube = new SimpleCube(dir1_, dir2_, origin_, GLfloat(1.0f));
                     std::vector<GLfloat> cube_vertices = cube->get_vertices();
                     std::vector<GLuint> cube_indices = cube->get_indices();
-                    obj = new SimpleTriangle(cube_vertices, cube_indices);
+                    obj = new SimpleTriangle(cube_vertices, cube_indices, "./shader/hello_triangle_vshader.vert", "./shader/hello_triangle_pshader.frag");
+                    draw(obj);
+                }
+                catch (const char* err) {
+                    std::cout << err << std::endl;
+                    return -1;
+                }
+            }
+            break;
+        case 4:
+            std::cout << "Hello light" << std::endl;
+            {
+                std::vector<GLfloat> origin_ = {-0.5f, -0.5f, -0.5f};
+                std::vector<GLfloat> dir1_ = {0.0f, sqrt(2.0f)/2.0f, sqrt(2.0f)/2.0f};
+                std::vector<GLfloat> dir2_ = {sqrt(2.0f)/2.0f, 0.0f, sqrt(2.0f)/2.0f};
+                try {
+                    SimpleCube *cube = new SimpleCube(dir1_, dir2_, origin_, GLfloat(0.3f));
+                    std::vector<GLfloat> cube_vertices = cube->get_vertices();
+                    std::vector<GLuint> cube_indices = cube->get_indices();
+                    obj = new SimpleTriangle(cube_vertices, cube_indices, "./shader/hello_triangle_vshader.vert", "./shader/hello_ambient.frag");
                     draw(obj);
                 }
                 catch (const char* err) {
@@ -133,7 +168,7 @@ int MainWindow::activate(unsigned int numdemo)
     return 0;
 }
 
-// process all input: query GLFW whether relevantœ keys are pressed/released this frame and react accordingly
+// process all input: query GLFW whether relevante keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window)
 {

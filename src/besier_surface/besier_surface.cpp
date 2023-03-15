@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-BesierSurface::BesierSurface(std::vector<std::vector<glm::vec3>>& checkpoints, size_t len_row, size_t len_column) : OpenglObject()
+BesierSurface::BesierSurface(std::vector<std::vector<glm::vec3>>& checkpoints, size_t len_row, size_t len_column, char* shader_vertex_file, char* shader_pixel_file) : OpenglObject()
 {
     _checkpoints = checkpoints;
 
@@ -46,7 +46,7 @@ BesierSurface::BesierSurface(std::vector<std::vector<glm::vec3>>& checkpoints, s
         }
     }
 
-    _figure = new SimpleTriangle(_vertices, _indices);
+    _figure = new SimpleTriangle(_vertices, _indices, shader_vertex_file, shader_pixel_file);
 }
 
 BesierSurface::~BesierSurface(){}

@@ -57,3 +57,10 @@ std::vector<GLfloat> cross_product(std::vector<GLfloat> &vect1, std::vector<GLfl
     
     return crossed_vect;
 }
+
+char* assign_string(char *string)
+{
+    char *copy_string = (char*)malloc(strlen(string)+1);
+    strcpy(copy_string, string);
+    return copy_string;
+}

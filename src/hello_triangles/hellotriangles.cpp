@@ -3,14 +3,14 @@
 
 #include "hellotriangles.h"
 
-const char * shader_vertex_file   = "./shader/hello_triangle_vshader.vert";
-const char * shader_pixel_file    = "./shader/hello_triangle_pshader.frag";
-
-SimpleTriangle::SimpleTriangle(std::vector<GLfloat>& vertices, std::vector<GLuint>& indices) : OpenglObject()
+SimpleTriangle::SimpleTriangle(std::vector<GLfloat>& vertices, std::vector<GLuint>& indices, char* shader_vertex_file, char* shader_pixel_file) : OpenglObject()
 {
     // 1.1 - Initialise geometric data
     _vertices = vertices;
     _indices  = indices;
+
+    shader_vertex_path = shader_vertex_file;
+    shader_pixel_path = shader_pixel_file;
 
     init();
 }
@@ -32,6 +32,9 @@ SimpleTriangle::SimpleTriangle() : OpenglObject()
         0, 1, 3,
         1, 2, 3
     };
+
+    shader_vertex_path   = "./shader/hello_triangle_vshader.vert";
+    shader_pixel_path    = "./shader/hello_triangle_pshader.frag";
     
     init();
 }
@@ -52,6 +55,8 @@ void SimpleTriangle::draw(void)
     // draw the triangle
     glUseProgram(_program);
     glBindVertexArray(_vao);
+
+    
     //glDrawArrays(GL_TRIANGLES, 0, 3);
     glDrawElements(GL_TRIANGLES, _indices.size(), GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
@@ -92,10 +97,10 @@ void SimpleTriangle::init(void)
 
 
     // 4 - bind the shaders
-    _vshader = loadShader(GL_VERTEX_SHADER,  shader_vertex_file);
+    _vshader = loadShader(GL_VERTEX_SHADER,  shader_vertex_path);
     if (_vshader == -1)
         throw "bad vertex shader load";
-    _pshader = loadShader(GL_FRAGMENT_SHADER, shader_pixel_file);
+    _pshader = loadShader(GL_FRAGMENT_SHADER, shader_pixel_path);
     if(_pshader == -1)
         throw "bad fragment shader load";
     
