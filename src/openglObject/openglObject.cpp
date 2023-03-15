@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cstring>
 
-#include <glad/glad.h>
-
 #include "openglObject.h"
 
 OpenglObject::OpenglObject(){}

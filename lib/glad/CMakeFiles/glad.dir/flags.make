@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/glad/include
+C_INCLUDES = -I/home/magjico/Bureau/Info_graphique/M2_Projet/Projet_M1/lib/glad/include
 
 C_FLAGS = 
 

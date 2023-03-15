@@ -4,6 +4,7 @@
 // #include "../openglObject/openglObject.h"
 // #include "../hello_triangles/hellotriangles.h"
 #include "../besier_surface/besier_surface.h"
+#include "../hello_cubes/hellocubes.h"
 
 #include <GLFW/glfw3.h>
 

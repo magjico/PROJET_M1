@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/glfw-3.3.4/include -I/home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/glfw-3.3.4/src
+C_INCLUDES = -I/home/magjico/Bureau/Info_graphique/M2_Projet/Projet_M1/lib/glfw-3.3.4/include -I/home/magjico/Bureau/Info_graphique/M2_Projet/Projet_M1/lib/glfw-3.3.4/src
 
 C_FLAGS = -fPIC -Wall -std=gnu99
 

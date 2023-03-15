@@ -1,4 +1,4 @@
-# Install script for directory: /home/magjico/Bureau/Informatique_Graphique/Projet_M1/lib/glfw-3.3.4/examples
+# Install script for directory: /home/magjico/Bureau/Info_graphique/M2_Projet/Projet_M1/lib/glfw-3.3.4/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

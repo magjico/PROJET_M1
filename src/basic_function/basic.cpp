@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "basic.h"
 
 char* LoadSource(const char *filename)
@@ -37,4 +39,21 @@ char* LoadSource(const char *filename)
     fclose(fp);
 
     return src;
+}
+
+// Crossed-product 
+std::vector<GLfloat> cross_product(std::vector<GLfloat> &vect1, std::vector<GLfloat> &vect2)
+{
+    std::vector<GLfloat> crossed_vect = {};
+
+    if (vect1.size() != 3 || vect2.size() != 3) {
+        std::cerr << "try to do a cross-product with vector of size not equal at 3" << std::endl;
+        exit(1);
+    }
+
+    crossed_vect.push_back(GLfloat(vect1.at(1) * vect2.at(2) - vect2.at(1) * vect2.at(2)));
+    crossed_vect.push_back(GLfloat(vect1.at(2) * vect2.at(0) - vect2.at(2) * vect1.at(0)));
+    crossed_vect.push_back(GLfloat(vect1.at(0) * vect2.at(1) - vect2.at(0) * vect1.at(1)));
+    
+    return crossed_vect;
 }

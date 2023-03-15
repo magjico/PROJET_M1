@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 
 #include <iostream>
+#include <math.h>
 
 static int draw_value = GL_FILL;
 
@@ -75,12 +76,15 @@ int MainWindow::activate(unsigned int numdemo)
                     glm::vec3(0.7f,    0.3f, -0.8f)
                 }
             };
+    
     switch(numdemo){
         case 0:
-            std::cout << "blank window demo" << std::endl;
-            obj = new OpenglObject();
-            draw(obj);
-            break;
+            {
+                std::cout << "blank window demo" << std::endl;
+                obj = new OpenglObject();
+                draw(obj);
+                break;
+            }
         case 1:
             std::cout << "Hello Triangle" << std::endl;
             try {
@@ -103,13 +107,33 @@ int MainWindow::activate(unsigned int numdemo)
                 return -1;
             }
             break;
+        case 3:
+            std::cout << "Hello Cube" << std::endl;
+            {
+                std::vector<GLfloat> origin_ = {-0.5f, -0.5f, -0.5f};
+                std::vector<GLfloat> dir1_ = {0.0f, sqrt(2.0f)/2.0f, sqrt(2.0f)/2.0f};
+                std::vector<GLfloat> dir2_ = {sqrt(2.0f)/2.0f, 0.0f, sqrt(2.0f)/2.0f};
+                try {
+                    SimpleCube *cube = new SimpleCube(dir1_, dir2_, origin_, GLfloat(1.0f));
+                    std::vector<GLfloat> cube_vertices = cube->get_vertices();
+                    std::vector<GLuint> cube_indices = cube->get_indices();
+                    obj = new SimpleTriangle(cube_vertices, cube_indices);
+                    draw(obj);
+                }
+                catch (const char* err) {
+                    std::cout << err << std::endl;
+                    return -1;
+                }
+            }
+            break;
         default:
             std::cout << "No others demo" << std::endl;
+            return -1;
     }
     return 0;
 }
 
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
+// process all input: query GLFW whether relevantœ keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window)
 {
